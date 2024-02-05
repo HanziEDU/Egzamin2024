@@ -1,0 +1,37 @@
+﻿@model Egzamin2024.Models.Note
+
+@{
+    ViewBag.Title = "Szczegóły notatki";
+}
+
+@* Mikołaj Handzlik 14273 *@
+
+<h2>@Model.Title</h2>
+
+<div>
+    <h4>Notatka</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Deadline)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Deadline)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Powrót do listy notatek</a>
+</div>

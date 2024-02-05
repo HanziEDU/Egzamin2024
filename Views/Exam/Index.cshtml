@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Egzamin2024.Models.Note>
+@*Mikołaj Handzlik 14273*@
+@{
+    ViewData["Title"] = "Lista ważnych notatek";
+}
+
+<h1>Lista notatek</h1>
+
+<ul>
+    @foreach (var note in Model)
+    {
+        <li>
+            <a asp-controller="Exam" asp-action="Details" asp-route-title="@note.Title">
+                @note.Title
+            </a>
+
+        </li>
+        
+    }
+</ul>
+<div><a asp-action="Create" class="btn btn-secondary">Utwórz notatke</a></div>

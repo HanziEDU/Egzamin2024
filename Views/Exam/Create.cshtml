@@ -1,0 +1,29 @@
+﻿@model Egzamin2024.Models.Note
+@*Mikołaj Handzlik 14273*@
+@{
+    ViewData["Title"] = "Utwórz notatkę";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="Title" class="font-weight-bold">Tytuł</label>
+            <input asp-for="Title" class="form-control" placeholder="Wpisz tytuł notatki">
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="Deadline" class="font-weight-bold">Data ważności</label>
+            <input asp-for="Deadline" type="datetime-local" class="form-control">
+            <span asp-validation-for="Deadline" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Content" class="font-weight-bold">Treść</label>
+        <textarea asp-for="Content" class="form-control" rows="4" placeholder="Wpisz treść notatki"></textarea>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Utwórz</button>
+    <a asp-action="Index" class="btn btn-secondary">Powrót do listy notatek</a>
+</form>
